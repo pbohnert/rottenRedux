@@ -14,7 +14,9 @@
 		D00A60DB19CF59610070A1AC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D00A60D919CF59610070A1AC /* LaunchScreen.xib */; };
 		D00A60E719CF59610070A1AC /* RottenTomatoesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A60E619CF59610070A1AC /* RottenTomatoesTests.swift */; };
 		D00A60F119CF68880070A1AC /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A60F019CF68880070A1AC /* MoviesViewController.swift */; };
-		D00A60F319D09E7E0070A1AC /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A60F219D09E7E0070A1AC /* MovieCell.swift */; };
+		D03F06E019D5C9A60052ABF6 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F06DF19D5C9A60052ABF6 /* MovieCell.swift */; };
+		D03F06E419D5D58D0052ABF6 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F06E319D5D58D0052ABF6 /* MovieDetails.swift */; };
+		D0AD876019D4A3B800CBC550 /* MoviesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD875F19D4A3B800CBC550 /* MoviesDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +40,10 @@
 		D00A60E519CF59610070A1AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D00A60E619CF59610070A1AC /* RottenTomatoesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RottenTomatoesTests.swift; sourceTree = "<group>"; };
 		D00A60F019CF68880070A1AC /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
-		D00A60F219D09E7E0070A1AC /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		D03F06DF19D5C9A60052ABF6 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		D03F06E319D5D58D0052ABF6 /* MovieDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieDetails.swift; path = ../MovieDetails.swift; sourceTree = "<group>"; };
 		D086C2FF19D0B2A20055A627 /* RottenTomatoes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RottenTomatoes-Bridging-Header.h"; sourceTree = "<group>"; };
+		D0AD875F19D4A3B800CBC550 /* MoviesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviesDetailViewController.swift; path = ../MoviesDetailViewController.swift; sourceTree = "<group>"; };
 		D7616222F9F741C9B3261758 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8670DF57944A8AA6C66562 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,8 +98,10 @@
 		D00A60CD19CF59610070A1AC /* RottenTomatoes */ = {
 			isa = PBXGroup;
 			children = (
-				D00A60F219D09E7E0070A1AC /* MovieCell.swift */,
+				D03F06E319D5D58D0052ABF6 /* MovieDetails.swift */,
+				D03F06DF19D5C9A60052ABF6 /* MovieCell.swift */,
 				D00A60F019CF68880070A1AC /* MoviesViewController.swift */,
+				D0AD875F19D4A3B800CBC550 /* MoviesDetailViewController.swift */,
 				D00A60D019CF59610070A1AC /* AppDelegate.swift */,
 				D00A60D419CF59610070A1AC /* Main.storyboard */,
 				D00A60D719CF59610070A1AC /* Images.xcassets */,
@@ -266,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0AD876019D4A3B800CBC550 /* MoviesDetailViewController.swift in Sources */,
 				D00A60D119CF59610070A1AC /* AppDelegate.swift in Sources */,
 				D00A60F119CF68880070A1AC /* MoviesViewController.swift in Sources */,
-				D00A60F319D09E7E0070A1AC /* MovieCell.swift in Sources */,
+				D03F06E419D5D58D0052ABF6 /* MovieDetails.swift in Sources */,
+				D03F06E019D5C9A60052ABF6 /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
