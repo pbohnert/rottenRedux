@@ -8,6 +8,7 @@
 
 import UIKit
 
+//class MovieDetails: NSDictionary {
 class MovieDetails: NSObject {
     var title: String
     var year: String
@@ -27,7 +28,12 @@ class MovieDetails: NSObject {
         self.synopsis = synopsis
         self.critic_score = critic_score
         self.audience_score = audience_score
+  //      super.init()
     }
+
+//    required init(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//    }
     
   
    
