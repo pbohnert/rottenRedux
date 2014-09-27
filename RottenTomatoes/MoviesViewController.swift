@@ -83,11 +83,21 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func refresh(sender:AnyObject) {
-        self.tableView.reloadData()
-        self.refreshControl .endRefreshing()
+            //get our movie list again
+            var url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=gk3vtrh7ue3rhug94zhw4q66&limit=20&country=us"
+            
+        var request = NSURLRequest(URL: NSURL(string: url))
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+            var object = NSJSONSerialization.JSONObjectWithData(data, options:  nil, error: nil) as NSDictionary
+            
+                self.movies = object["movies"] as [NSDictionary]
+                self.tableView.reloadData()
+                self.refreshControl .endRefreshing()
     }
+}
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         println("here in prepare for Seque")
         var movieDetailViewController: MoviesDetailViewController = segue.destinationViewController as MoviesDetailViewController
         var movieIndex = tableView!.indexPathForSelectedRow()!.row
@@ -107,6 +117,9 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         var posters = selectedMovie["posters"] as NSDictionary
         var myImageURL = posters["original"] as String
+        if myImageURL.lowercaseString.rangeOfString("tmb.jpg") != nil {
+            myImageURL = myImageURL.stringByReplacingOccurrencesOfString("tmb.jpg", withString: "ori.jpg", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        }
         
         movieDetailViewController.audience = audience
         movieDetailViewController.critic = critic
