@@ -10,7 +10,7 @@ didn't get to error message story.
 
 Total time - 12 hours
 
-![RottenGif](pbohnert.github.com/rottenTomatoes/img/pb-Rotten.jpg)
+![RottenGif](github.com/pbohnert/rottenTomatoes/blob/master/pb-Rotten.gif)
 
 
 
