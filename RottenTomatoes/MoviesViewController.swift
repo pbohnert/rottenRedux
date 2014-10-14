@@ -12,6 +12,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     var movieDetails =  [MovieDetails]()
+    var refreshControl:UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,17 +20,25 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.blackColor()
 
-    var url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=gk3vtrh7ue3rhug94zhw4q66&limit=20&country=us"
+        setUpRefreshControl()
+        getMovieLists()
+        // Do any additional setup after loading the view.
+    }
+    
+    func getMovieLists() {
+
+        self.navigationItem.title = "Updating..."
+        self.tableView.reloadData()
+        var url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=gk3vtrh7ue3rhug94zhw4q66&limit=20&country=us"
         
         var request = NSURLRequest(URL: NSURL(string: url))
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             var object = NSJSONSerialization.JSONObjectWithData(data, options:  nil, error: nil) as NSDictionary
             self.movieDetails = MovieDetails.moviesWithJSON(object["movies"] as NSArray)
-            self.tableView.backgroundColor = UIColor.blackColor()
+            self.refreshControl.endRefreshing()
+            self.navigationItem.title = "Movies"
             self.tableView.reloadData()
-
         }
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,6 +71,17 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+    func setUpRefreshControl() {
+        // set up pull to refresh
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl)
+    }
+    
+    func refresh(sender: AnyObject) {
+        getMovieLists()
+    }
 
     /*
     // MARK: - Navigation
