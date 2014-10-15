@@ -20,19 +20,21 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var synopsisLabel: UILabel!
     
     var posterImageURL: String = ""
-    var audience: String = ""
-    var critic: String = ""
+    var audience: Int = 0
+    var critic: Int = 0
     var synopsis: String = ""
     var myTitle: String = ""
-    var year: String = ""
+    var year: Int = 0
     var rating: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = myTitle
+        
         posterImageView.setImageWithURL(NSURL(string: posterImageURL))
         titleYearLabel.text = myTitle  + " (\(year)" + ")"
-        ratingLabel.text = rating
+        ratingLabel.text = "\(rating)"
         
         scoreLabel.text = "Critics score:" + " \(critic)" + ", Audience score:" + " \(audience)"
         synopsisLabel.text = synopsis

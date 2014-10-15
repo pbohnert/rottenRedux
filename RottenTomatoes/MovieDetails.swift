@@ -10,15 +10,15 @@ import UIKit
 
 class MovieDetails {
     var title: String = ""
-    var year: String = ""
+    var year: Int = 0
     var thumbnailImageURL: String = ""
     var largeImageURL: String = ""
-    var critic_score: String = ""
-    var audience_score: String = ""
+    var critic_score: Int = 0
+    var audience_score: Int = 0
     var rating: String = ""
     var synopsis: String = ""
     
-    init(title: String, year: String, thumbnailImageURL: String, largeImageURL: String, critic_score: String, audience_score: String, rating: String, synopsis: String) {
+    init(title: String, year: Int, thumbnailImageURL: String, largeImageURL: String, critic_score: Int, audience_score: Int, rating: String, synopsis: String) {
         self.title = title
         self.year = year
         self.thumbnailImageURL = thumbnailImageURL
@@ -43,11 +43,14 @@ class MovieDetails {
             for movie in allResults  {
                 var largeImageURL = ""
                 var thumbnailImageURL = ""
+                var multiScore = movie["ratings"] as NSDictionary
+                //var critic_score = multiScore["critic_score"] as Int!
+                var audience_score = multiScore["audience_score"] as? Int ?? 0
+                var critic_score = multiScore["critic_score"] as? Int ?? 0
+
                 var title = movie["title"] as? String ?? ""
-                var year = movie["year"] as? String ?? "1900"
-                var critic_score = movie["critic_score"] as? String ?? ""
-                var audience_score = movie["audience_score"] as? String ?? ""
-                var rating = movie["rating"] as? String ?? ""
+                var year = movie["year"] as? Int ?? 1900
+                var rating = movie["mpaa_rating"] as? String ?? ""
                 var synopsis = movie["synopsis"] as? String ?? ""
                 var posters = movie["posters"] as NSDictionary
                 largeImageURL = posters["original"] as String
