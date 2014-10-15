@@ -48,7 +48,7 @@
                                             <outlet property="posterView" destination="q64-ig-wck" id="k5U-tC-f1s"/>
                                             <outlet property="synopsisLabel" destination="inF-0G-ffA" id="tWz-m2-C67"/>
                                             <outlet property="titleLabel" destination="kYn-sE-tCK" id="Bst-Wl-NwI"/>
-                                            <segue destination="rCh-jy-K81" kind="push" identifier="movieDetailSeque" id="9xd-de-sPz"/>
+                                            <segue destination="lDW-Aa-3Xu" kind="push" identifier="movieSegue" id="dVl-Cm-XPg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -63,72 +63,80 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766" y="337"/>
+            <point key="canvasLocation" x="805" y="354"/>
         </scene>
         <!--movieTitle-->
-        <scene sceneID="b4K-AN-noC">
+        <scene sceneID="4U0-5D-K26">
             <objects>
-                <viewController id="rCh-jy-K81" customClass="MoviesDetailViewController" customModule="RottenTomatoes" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uSb-6o-dh2">
+                <viewController storyboardIdentifier="MovieDetailViewController" id="lDW-Aa-3Xu" customClass="MovieDetailViewController" customModule="RottenTomatoes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MPC-bp-TXX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="RCb-h9-Uuf">
-                                <rect key="frame" x="-22" y="60" width="364" height="246"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Mbg-N7-fFs">
+                                <rect key="frame" x="0.0" y="60" width="320" height="333"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" id="f4c-ub-irB">
-                                <rect key="frame" x="0.0" y="309" width="320" height="644"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="TdP-aY-las">
+                                <rect key="frame" x="0.0" y="392" width="320" height="254"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleYear" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S9g-Al-vHo">
-                                        <rect key="frame" x="8" y="34" width="306" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6xq-G5-sgk">
-                                        <rect key="frame" x="8" y="73" width="306" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QIh-bv-kZc">
-                                        <rect key="frame" x="8" y="109" width="82" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="synopsis" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EfY-fU-a2y">
-                                        <rect key="frame" x="6" y="138" width="306" height="169"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" id="hPu-3f-0ha">
+                                        <rect key="frame" x="0.0" y="8" width="320" height="254"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleYear" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1gZ-nw-tdE">
+                                                <rect key="frame" x="25" y="0.0" width="272" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dOZ-nR-C0z">
+                                                <rect key="frame" x="25" y="64" width="135" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="synopsis" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EOP-77-qJY">
+                                                <rect key="frame" x="25" y="93" width="272" height="77"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YUj-jz-rAq">
+                                                <rect key="frame" x="25" y="40" width="277" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="movieTitle" id="vtL-Qo-gGf">
-                        <barButtonItem key="backBarButtonItem" title="Movies" id="Jwe-zm-mAA"/>
+                    <navigationItem key="navigationItem" title="movieTitle" id="bIS-vf-cNN">
+                        <barButtonItem key="backBarButtonItem" title="Movies" id="Hyt-cE-utD"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="largeImage" destination="RCb-h9-Uuf" id="34m-nC-Xae"/>
-                        <outlet property="rating" destination="QIh-bv-kZc" id="phJ-7D-ez5"/>
-                        <outlet property="score" destination="6xq-G5-sgk" id="X5N-Mu-Hje"/>
-                        <outlet property="scroller" destination="f4c-ub-irB" id="axM-zT-de0"/>
-                        <outlet property="synopsis" destination="EfY-fU-a2y" id="62o-fd-rba"/>
-                        <outlet property="titleYear" destination="S9g-Al-vHo" id="gyN-EJ-A3A"/>
+                        <outlet property="contentView" destination="hPu-3f-0ha" id="ZrC-aM-FnV"/>
+                        <outlet property="posterImageView" destination="Mbg-N7-fFs" id="bsP-AH-FY8"/>
+                        <outlet property="ratingLabel" destination="dOZ-nR-C0z" id="UBe-J3-Dmq"/>
+                        <outlet property="scoreLabel" destination="YUj-jz-rAq" id="zjy-qJ-2KG"/>
+                        <outlet property="scrollingView" destination="TdP-aY-las" id="OJA-v4-axI"/>
+                        <outlet property="synopsisLabel" destination="EOP-77-qJY" id="Aw9-b8-Yua"/>
+                        <outlet property="titleYearLabel" destination="1gZ-nw-tdE" id="h7s-2l-oyL"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f0h-un-EBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l3f-Hq-ZYz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1178" y="337"/>
+            <point key="canvasLocation" x="1202" y="354"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xcc-nu-vvs">

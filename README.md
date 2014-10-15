@@ -1,17 +1,25 @@
-rottenTomatoes
-==============
 
-Codepath exercise to view movies from Rotten Tomatoes using their api.
+=======
+rottenTwo
+=========
+October/November iOS Bootcamp, Codepath.com (observer class)
 
-Finished first two required stories, though I don't have the scrolling on the detail view working the way I want.
-Started researching MRProgress from Cocoapods but didn't yet have time to implement story.
-Put in support for pull to refresh, but not sure I have it working.
-Didn't get to error message story.
+(a revised version of my Rotten Tomatoes client for Codepath)
 
-Total time - 12 hours
+--> Total time - 7 hours
 
+--> Project User Stories
 
-![RottenGif](pb-Rotten.gif)
+* User can view a list of movies from Rotten Tomatoes. Poster images must be loading asynchronously.
+* User can view movie details by tapping on a cell
+* User can pull to refresh the movie list.
+* User sees loading state while waiting for movies API. You can use one of the 3rd party libraries at cocoacontrols.com.
+--not done:
+* User sees error message when there's a networking error. You may not use UIAlertView to display the error. See this screenshot for what the error message should look like: network error screenshot.
 
+![GIF demo](rottenDemo.gif)
+--> Cocoapods (external libs) used
 
-
+* [AFNetworking](https://github.com/AFNetworking/AFNetworking)
+* [MBProgressHUD] (https://github.com/jdg/MBProgressHUD)
+>>>>>>> newBase
