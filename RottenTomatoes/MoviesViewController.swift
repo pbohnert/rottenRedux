@@ -84,12 +84,9 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        println("here in prepare for Seque")
         var movieDetailViewController: MovieDetailViewController = segue.destinationViewController as MovieDetailViewController
         var movieIndex = tableView!.indexPathForSelectedRow()!.row
         var selectedMovie = self.movieDetails[movieIndex]
-        
-        println("movie is \(selectedMovie.audience_score)")
         
         //get poster image
          movieDetailViewController.posterImageURL = selectedMovie.largeImageURL

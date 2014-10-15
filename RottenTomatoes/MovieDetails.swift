@@ -58,7 +58,7 @@ class MovieDetails {
                 if largeImageURL.lowercaseString.rangeOfString("tmb.jpg") != nil {
                     largeImageURL = largeImageURL.stringByReplacingOccurrencesOfString("tmb.jpg", withString: "ori.jpg", options: NSStringCompareOptions.LiteralSearch, range: nil)
                 }
-        println("year is \(year)")
+ 
                 var newMovie = MovieDetails(title: title, year: year, thumbnailImageURL: thumbnailImageURL, largeImageURL: largeImageURL, critic_score: critic_score, audience_score: audience_score, rating: rating, synopsis: synopsis)
                 movies.append(newMovie)
 
