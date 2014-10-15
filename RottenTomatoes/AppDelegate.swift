@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let navigationController = application.windows[0].rootViewController as UINavigationController
         navigationController.navigationBar.barTintColor = UIColor.blackColor()
+        
+        var navigationBarAppearance = UINavigationBar.appearance()
+        navigationBarAppearance.tintColor = UIColor.yellowColor()
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.yellowColor()]
         navigationController.navigationBar.titleTextAttributes = titleDict
         return true

@@ -82,7 +82,29 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     func refresh(sender: AnyObject) {
         getMovieLists()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        println("here in prepare for Seque")
+        var movieDetailViewController: MovieDetailViewController = segue.destinationViewController as MovieDetailViewController
+        var movieIndex = tableView!.indexPathForSelectedRow()!.row
+        var selectedMovie = self.movieDetails[movieIndex]
+        
+        //get poster image
+         movieDetailViewController.posterImageURL = selectedMovie.largeImageURL
+        
+        
+        //get other attributes
+        //movieDetailViewController.audience = selectedMovie.audience_score
+        //movieDetailViewController.critic = selectedMovie.critic_score
+        //movieDetailViewController.mySyn = selectedMovie.synopsis
+        //movieDetailViewController.myTitle = selectedMovie.title
+        //movieDetailViewController.myYear = selectedMovie.year
+        //movieDetailViewController.myMpaa = selectedMovie.rating
 
+
+    }
+    
+    
     /*
     // MARK: - Navigation
 

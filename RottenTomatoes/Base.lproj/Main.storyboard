@@ -18,7 +18,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="96" id="tCB-m1-zTR" customClass="MovieCell" customModule="RottenTomatoes" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="96" id="tCB-m1-zTR" customClass="MovieCell" customModule="RottenTomatoes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tCB-m1-zTR" id="6q6-Af-5J1">
@@ -48,6 +48,7 @@
                                             <outlet property="posterView" destination="q64-ig-wck" id="k5U-tC-f1s"/>
                                             <outlet property="synopsisLabel" destination="inF-0G-ffA" id="tWz-m2-C67"/>
                                             <outlet property="titleLabel" destination="kYn-sE-tCK" id="Bst-Wl-NwI"/>
+                                            <segue destination="lDW-Aa-3Xu" kind="push" identifier="movieSegue" id="dVl-Cm-XPg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -63,6 +64,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="805" y="354"/>
+        </scene>
+        <!--movieTitle-->
+        <scene sceneID="4U0-5D-K26">
+            <objects>
+                <viewController storyboardIdentifier="MovieDetailViewController" id="lDW-Aa-3Xu" customClass="MovieDetailViewController" customModule="RottenTomatoes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MPC-bp-TXX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Mbg-N7-fFs">
+                                <rect key="frame" x="0.0" y="60" width="320" height="333"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="movieTitle" id="bIS-vf-cNN">
+                        <barButtonItem key="backBarButtonItem" title="Movies" id="Hyt-cE-utD"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="posterImageView" destination="Mbg-N7-fFs" id="bsP-AH-FY8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l3f-Hq-ZYz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1202" y="354"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xcc-nu-vvs">
