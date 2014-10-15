@@ -89,18 +89,18 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         var movieIndex = tableView!.indexPathForSelectedRow()!.row
         var selectedMovie = self.movieDetails[movieIndex]
         
+        println("movie is \(selectedMovie.audience_score)")
+        
         //get poster image
          movieDetailViewController.posterImageURL = selectedMovie.largeImageURL
         
-        
         //get other attributes
-        //movieDetailViewController.audience = selectedMovie.audience_score
-        //movieDetailViewController.critic = selectedMovie.critic_score
-        //movieDetailViewController.mySyn = selectedMovie.synopsis
-        //movieDetailViewController.myTitle = selectedMovie.title
-        //movieDetailViewController.myYear = selectedMovie.year
-        //movieDetailViewController.myMpaa = selectedMovie.rating
-
+        movieDetailViewController.audience = selectedMovie.audience_score
+        movieDetailViewController.critic = selectedMovie.critic_score
+        movieDetailViewController.synopsis = selectedMovie.synopsis
+        movieDetailViewController.myTitle = selectedMovie.title
+        movieDetailViewController.year = selectedMovie.year
+        movieDetailViewController.rating = selectedMovie.rating
 
     }
     
