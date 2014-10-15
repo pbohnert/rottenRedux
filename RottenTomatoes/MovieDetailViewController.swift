@@ -31,6 +31,7 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = myTitle
+        setViewColor()
         
         posterImageView.setImageWithURL(NSURL(string: posterImageURL))
         titleYearLabel.text = myTitle  + " (\(year)" + ")"
@@ -55,6 +56,16 @@ class MovieDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setViewColor() {
+        
+        self.contentView.backgroundColor = UIColor.blackColor()
+        self.scrollingView.backgroundColor = UIColor.blackColor()
+        self.contentView.tintColor = UIColor.whiteColor()
+        titleYearLabel.textColor = UIColor.whiteColor()
+        scoreLabel.textColor = UIColor.whiteColor()
+        ratingLabel.textColor = UIColor.whiteColor()
+        synopsisLabel.textColor = UIColor.whiteColor()
+    }
 
     /*
     // MARK: - Navigation

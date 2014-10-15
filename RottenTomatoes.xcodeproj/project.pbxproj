@@ -108,8 +108,8 @@
 		D00A60CD19CF59610070A1AC /* RottenTomatoes */ = {
 			isa = PBXGroup;
 			children = (
+				D034036319EE9A5E0087AC90 /* Model */,
 				D00A60F219D09E7E0070A1AC /* MovieCell.swift */,
-				D0DC1AF519DE13B10063B1AB /* MovieDetails.swift */,
 				D045308419EDEB7000FCB780 /* MovieDetailViewController.swift */,
 				D00A60F019CF68880070A1AC /* MoviesViewController.swift */,
 				D00A60D019CF59610070A1AC /* AppDelegate.swift */,
@@ -145,6 +145,14 @@
 				D00A60E519CF59610070A1AC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D034036319EE9A5E0087AC90 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0DC1AF519DE13B10063B1AB /* MovieDetails.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

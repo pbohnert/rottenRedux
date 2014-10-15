@@ -27,6 +27,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     func getMovieLists() {
 
+        showLoadingProgress()
         self.navigationItem.title = "Updating..."
         self.tableView.reloadData()
         var url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=gk3vtrh7ue3rhug94zhw4q66&limit=20&country=us"
@@ -35,6 +36,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             var object = NSJSONSerialization.JSONObjectWithData(data, options:  nil, error: nil) as NSDictionary
             self.movieDetails = MovieDetails.moviesWithJSON(object["movies"] as NSArray)
+            // Hide the progress indicator
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
             self.refreshControl.endRefreshing()
             self.navigationItem.title = "Movies"
             self.tableView.reloadData()
@@ -101,6 +104,11 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
 
     }
     
+    func showLoadingProgress() {
+        let loading = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        loading.mode = MBProgressHUDModeDeterminate
+        loading.labelText = "Loading...";
+    }
     
     /*
     // MARK: - Navigation
