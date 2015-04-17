@@ -32,10 +32,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         self.tableView.reloadData()
         var url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=gk3vtrh7ue3rhug94zhw4q66&limit=20&country=us"
         
-        var request = NSURLRequest(URL: NSURL(string: url))
+        var request = NSURLRequest(URL: NSURL(string: url)!)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            var object = NSJSONSerialization.JSONObjectWithData(data, options:  nil, error: nil) as NSDictionary
-            self.movieDetails = MovieDetails.moviesWithJSON(object["movies"] as NSArray)
+            var object = NSJSONSerialization.JSONObjectWithData(data, options:  nil, error: nil) as! NSDictionary
+            self.movieDetails = MovieDetails.moviesWithJSON(object["movies"] as! NSArray)
             // Hide the progress indicator
             MBProgressHUD.hideHUDForView(self.view, animated: true)
             self.refreshControl.endRefreshing()
@@ -55,7 +55,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("MovieCell") as MovieCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("MovieCell") as! MovieCell
         
         let movie = self.movieDetails[indexPath.row] as MovieDetails
         
@@ -87,7 +87,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var movieDetailViewController: MovieDetailViewController = segue.destinationViewController as MovieDetailViewController
+        var movieDetailViewController: MovieDetailViewController = segue.destinationViewController as! MovieDetailViewController
         var movieIndex = tableView!.indexPathForSelectedRow()!.row
         var selectedMovie = self.movieDetails[movieIndex]
         

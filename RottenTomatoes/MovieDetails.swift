@@ -43,7 +43,7 @@ class MovieDetails {
             for movie in allResults  {
                 var largeImageURL = ""
                 var thumbnailImageURL = ""
-                var multiScore = movie["ratings"] as NSDictionary
+                var multiScore = movie["ratings"] as! NSDictionary
                 //var critic_score = multiScore["critic_score"] as Int!
                 var audience_score = multiScore["audience_score"] as? Int ?? 0
                 var critic_score = multiScore["critic_score"] as? Int ?? 0
@@ -52,9 +52,9 @@ class MovieDetails {
                 var year = movie["year"] as? Int ?? 1900
                 var rating = movie["mpaa_rating"] as? String ?? ""
                 var synopsis = movie["synopsis"] as? String ?? ""
-                var posters = movie["posters"] as NSDictionary
-                largeImageURL = posters["original"] as String
-                thumbnailImageURL = posters["thumbnail"] as String
+                var posters = movie["posters"] as! NSDictionary
+                largeImageURL = posters["original"] as! String
+                thumbnailImageURL = posters["thumbnail"] as! String
                 if largeImageURL.lowercaseString.rangeOfString("tmb.jpg") != nil {
                     largeImageURL = largeImageURL.stringByReplacingOccurrencesOfString("tmb.jpg", withString: "ori.jpg", options: NSStringCompareOptions.LiteralSearch, range: nil)
                 }
